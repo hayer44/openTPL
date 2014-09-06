@@ -1,0 +1,20 @@
+\documentclass[12pt, oneside, a4paper]{book}
+\usepackage{ifpdf}
+\usepackage[colorlinks,bookmarksopen]{hyperref}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsthm,amsfonts}
+
+\begin{document}
+\begin{titlepage}
+\author{Т.П. Лукашенко}
+\title{Лекция 1. \\Ряды. Введение.}
+\date{}
+\maketitle
+\end{titlepage}
+Пуст $ \{ a_n \}_{n=m}^{\infty} $ - последовательность чисел.
+Тогда формальная сумма вида $a_m+a_{m+1}+a_{m+2}+ \cdots = \sum_{k=m}^{\infty} $ называется рядом. \\
+$ \mathbin{S}_{N} = \sum_{k=m}^{N} $ -- частичная сумма с номером N.\\
+$ \mathbin{S}_{N} = 0 $, если $ N < m $.
+\end{document}
