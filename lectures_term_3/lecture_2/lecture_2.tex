@@ -89,12 +89,12 @@ $$\lim{k \to \infty} k ( \frac{a_k}{a_{k+1}} -1 ) = \beta $$
 тогда по признаку Раабе ряд сходится при $\beta > 1$ и расходится при $\b < 1$\\
 При $\alpha =1, \beta =1$ воспользуемся признаком Куммера с $b_k = k ln k, k\ge 2.$\\
 Ряд обратных к $b$ расходится по интегральному признаку, так как расходится соответствующий интеграл
-$$v_k = \frac{a_k}{a_{k+1}}b_k - b_{k+1} = \left(1 + \frac{1}{k} + \frac{\gamma_k}{k^{1+\epsilon}} \right) k lnk - (k+1)ln(k+1) = 
-(k+1)lnk + \frac{\gamma_k}{k^{\epsilon}}ln k - (k+1)ln(k+1) =$$
-$$ = \frac{\gamma_k lnk}{k^{epsilon}} - ln(\frac{k+1}{k})^{k+1}$$
-$$\frac{\gamma_k lnk}{k^{epsilon}} \xrightarrow{k \to \infty} 0$$
-$$ln(\frac{k+1}{k})^{k+1} \xrightarrow{k \to \infty} 1$$
-$$\frac{\gamma_k lnk}{k^{epsilon}} - ln(\frac{k+1}{k})^{k+1} \to \infty $$
+$$v_k = \frac{a_k}{a_{k+1}}b_k - b_{k+1} =$$
+$$= \left(1 + \frac{1}{k} + \frac{\gamma_k}{k^{1+\epsilon}} \right) k lnk - (k+1)ln(k+1) =$$
+$$=(k+1)\ln k + \frac{\gamma_k}{k^{\epsilon}}ln k - (k+1)\ln(k+1) = \frac{\gamma_k \ln k}{k^{\epsilon}} - \ln(\frac{k+1}{k})^{k+1}$$
+$$\frac{\gamma_k \ln k}{k^{\epsilon}} \xrightarrow{k \to \infty} 0$$
+$$\ln(\frac{k+1}{k})^{k+1} \xrightarrow{k \to \infty} 1$$
+$$\frac{\gamma_k \ln k}{k^{\epsilon}} - \ln(\frac{k+1}{k})^{k+1} \to -1 $$
 \end{proof}
 \end{enumerate}
 \begin{thm}
