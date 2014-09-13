@@ -5,9 +5,9 @@ TODO: Вставить замечания
 \item
 Если дан ряд $\ssum a_k$, то ряд сходится тогда и только тогда, когда последовательность частичных сумм $\s_n$ ограничена.
 \item
-(Признак сравнения) Если даны  ряды $\ssum a_k $ и $\ssum b_k , 0 \le a_k \le b_k, k>\mathbf K$, то из сходимости второго ряда следует сходимость первого, а из расходимости первого расходимость второго.
+(Признак сравнения) Если даны  ряды $\ssum a_k $ и $\ssum b_k , 0 \le a_k \le b_k,\; k> K$, то из сходимости второго ряда следует сходимость первого, а из расходимости первого расходимость второго.
 \begin{proof}
-$$ \ssumn a_k \le \sum_{k=1}^{K} a_k + \sum_{k=K+1}\!\!\! a_k \; \le \sum_{k=1}^{K} a_k + {\sum_{k=K+1}^{n} \!\!\! b_k}\; \le  \sum_{k=1}^{K}a_k + \sum_{k=1}^n\! b_k \le
+$$ \ssumn a_k \le \sum_{k=1}^{K} a_k + \sum_{k=K+1}^{n}\!\!\! a_k \; \le \sum_{k=1}^{K} a_k + {\sum_{k=K+1}^{n} \!\!\! b_k}\; \le  \sum_{k=1}^{K}a_k + \sum_{k=1}^n\! b_k \le
 \sum_{k=1}^{K}a_k +\sum_{k=1}^{\infty}\! b_k$$
 Из сходимости второго ряда следует ограниченность частиных сумм первого, а значит и сходимость первого.\\
 Если $n>K, p \ge 0$, то $\sum_{k=n+1}^{n+p}a_k \le \sum_{k=n+1}^{n+p} b_k$, поэтому из выполнения критерия Коши для второго ряда следует выполнение критерия Коши для превого. 
@@ -30,9 +30,9 @@ $$ \prod_{k+K}^{n-1}\frac{a_{k+1}}{a_k} \le \prod_{k+K}^{n-1}\frac{b_{k+1}}{b_k}
 \end{proof}
 \item
 (Д`Алабера) Пусть $\ssum a_k$ -- ряд с неотрицательными членами. Если
-$$\frac{a_{k+1}}{a_k} \le q < 1 \text{при} n\ge K$$
+$$\frac{a_{k+1}}{a_k} \le q < 1 \text{ при } n\ge K$$
 то ряд сходится. Если
-$$ \frac{a_{k+!}}{a_k} \text{при} n\ge K$$
+$$ \frac{a_{k+1}}{a_k} \ge 1 \text{ при } n \ge K$$
 То члены ряда не стремятся к нулю, и ряд расходится
 \begin{proof}
 Возьмём $b_k = q^k$ -- геометрическую прогрессию, ряд $\ssum q^k$ сходится.
@@ -55,22 +55,24 @@ $$ = f(1)+\sum_{k=2}^n \left( f(k) - \int\limits_{k-1}^k f(x)dx \right) - \int\l
 \end{proof}
 \item
 (Признак Куммера) Пусть $\ssum a_k$ -- ряд со строго положительными членами,
-$b_k$ -- последовательность строго положительных чисел, $$ v_k = \frac{a_k}{a_{k+1}}b_k - b_{k+1}$$
-Если $v_k \ge l . 0$ при $k \ge K$, то ряд сходится. Если $v_l \le 0$ при $k \ge K$ и ряд $\ssum (b_k)^{-1}$ расходится, то ряд $\ssum a_k$ также расходится.
+$b_k$ -- последовательность строго положительных чисел,
+$$ v_k = \frac{a_k}{a_{k+1}}b_k - b_{k+1}$$
+Если $v_k \ge l \ge 0$ при $k \ge K$, то ряд сходится. Если $v_l \le 0$ при $k \ge K$ и ряд $\ssum (b_k)^{-1}$ расходится, то ряд $\ssum a_k$ также расходится.
 \begin{proof}
-$$v_k = \frac{a_k}{a_{k+1}} b_k - b_{k+1} \ge l \ge l > 0, k \ge K$$
-$$a_k b_k-a_{k+1}b_{k+1} \ge l a_{k+1}, k\ge K$$
+$$v_k = \frac{a_k}{a_{k+1}} b_k - b_{k+1} \ge l	> 0,\; k \ge K$$
+$$a_k b_k-a_{k+1}b_{k+1} \ge l a_{k+1},\; k\ge K$$
 $$\sum_{k=K}^{n-1} \big( a_k b_k-a_{k+1}b_{k+1} \big) = a_Kb_K - a_nb_n \ge l \sum_{k=K}^{n-1} a_{k+1} = l \sum_{j=K+1}^{n}a_{j}$$
-Так как $a_Kb_K \ge l\sum_{j=K+1}{n}$, то частичные суммы ряда $\sum_{j=K+1}{\infty}$ ограничены и, значит, ряд $\ssum a_k$ сходится.
-Итак, $$v_k = \frac{a_k}{a_{k+1}}b_k - b_{k+1} \le 0 \text{ при } k\ge K,$$
-т.е. $a_k b_k - a_{k+!}b_{k+1}\le 0 k \ge$. Значит, $$ \sum_{k=K}^{n-1} \big( a_k b_k-a_{k+1}b_{k+1} \big) = a_K b_K - a_n b_n \le 0, n>K$$
+Так как $a_Kb_K \ge l\sum\limits_{j=K+1}^{n}a_j$, то частичные суммы ряда $\sum\limits_{j=K+1}^{\infty}a_j$ ограничены и, значит, ряд $\ssum a_k$ сходится.
+Итак, $$v_k = \frac{a_k}{a_{k+1}}b_k - b_{k+1} \le 0 \text{ при } k \ge K,$$
+т.е. $a_k b_k - a_{k+1}b_{k+1}\le 0$ при $k \ge K$.
+Значит, $$ \sum_{k=K}^{n-1} \big( a_k b_k-a_{k+1}b_{k+1} \big) = a_K b_K - a_n b_n \le 0,\; n>K$$
 отсюда: $a_N \ge a_Kb_K - (b_n)^{-1}$. Из расходимости ряда $\ssum b_k$ следует расходимость ряда $\ssum a_k$
 \end{proof}
 \item
 (Признак Раабе) Пусть $\ssum a_k$ -- ряд со строго положительными членами.
-Если $$k \left( \frac{a_k}{a_{k+1}} -1 \right) > q > 1, k \ge K,$$
+Если $$k \left( \frac{a_k}{a_{k+1}} -1 \right) > q > 1,\; k \ge K,$$
 то ряд сходится.
-Если $$k \left( \frac{a_k}{a_{k+1}} -1 \right) \le 1, k \ge K,$$
+Если $$k \left( \frac{a_k}{a_{k+1}} -1 \right) \le 1,\; k \ge K,$$
 то ряд расходится.
 \begin{proof}
 Возьмем $b_k =k$, ряд $\ssum (b_k)^{-1}$ расходится.
@@ -79,7 +81,7 @@ $$v_k = \frac{a_k}{a_{k+1}}k - (k+1) = k (\frac{a_k}{a_{k+1}}) -1 $$
 \end{proof}
 \item
 (Признак Гаусса) Пусть 
-$$(\forall k \in \nat) a_k>0, \frac{a_k}{a_{k+1}} = \alpha + \frac{\beta}{k}+\frac{\gamma_k}{k^{1+\epsilon}}, $$
+$$(\forall k \in \nat) \;\; a_k>0,\; \frac{a_k}{a_{k+1}} = \alpha + \frac{\beta}{k}+\frac{\gamma_k}{k^{1+\epsilon}}, $$
 где $\alpha, \beta, \epsilon \in \real, \epsilon > 0, \gamma_k$ -- ограниченная числова последовательность.
 Тогда при $\alpha > 1$ или $\alpha = 1, \beta > 1$, ряд $\ssum a_k$ сходится, а  при $\alpha < 1$ или $\alpha = 1, \beta \le 1$ -- расходится.
 \begin{proof}
@@ -98,6 +100,7 @@ $$\ln(\frac{k+1}{k})^{k+1} \xrightarrow{k \to \infty} 1$$
 $$\frac{\gamma_k \ln k}{k^{\epsilon}} - \ln(\frac{k+1}{k})^{k+1} \to -1 $$
 \end{proof}
 \end{enumerate}
+\newpage	
 \begin{thm}
 Если выполнено условие сходимости Д'Аламбера, то выполнено условие сходимости ряда Коши.
 \end{thm}
