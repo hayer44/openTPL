@@ -1,0 +1,90 @@
+\chapter{Ряды}
+\begin{enumerate}
+\item
+\textbf{Признак Абеля.}
+Если ряд $\ssum u_k$ сходится, а $v_k$ --- последовательность ограниченной вариации, то сходится ряд $\ssum u_k v_k$
+\item
+\textbf{Признак Дирихле.}
+Если последовательность частичных сумм ряда $\ssum u_k$ ограничена,
+а $v_k$ --- сходящаяся к 0 VB-последовательность, то сходится ряд $\ssum u_k v_k$.
+\begin{proof}
+$$ \sum_{k=m}^{\infty} u_k v_k = \sum_{k= m-1}^{n-1} \uu_k (v_k - v_{k+1}) + \uu_n v_n - \uu_{m-1}v_{m-1}$$
+В обоих случаях $\uu_{k}$ ограничена, ряд $\ssum (v_k - v_{k+1})$ сходится.
+$$(\forall \epsilon >0) \; (\exists N_1) \sum_{k=n_1 +1}^{\infty} < \epsilon,$$
+тогда при $n,m > N_1 +1$
+$$\left| \sum_{k=m-1}^{n-1} \uu_{v_k -v_{k+1}} \right| \le sup_{k} |\uu_k|*\epsilon$$
+В признаке Абеля $\uu_k$ и $v_k$ сходятся, значится последовательность $\uu_k v_k$.\\
+В признаке Дирихле $\uu_k$ ограничена, $V_k \xrightarrow{k\to\infty}0$
+$\rightarrow$ сходится последовательность $\uu_k v_k$.\\
+В обоих случаях
+$$ (\forall \epsilon > 0) (\exists N_2) (\forall n,m > N_2) |\uu_m v_m - \uu_{m-1}v_{m-1}| < \epsilon$$
+Тогда $\forall n,m > \max\{N_1 +1, N_2\}$ имеем
+$$|\sum_{k=m}^{n} u_k v_k| < \sup_k |\uu_k|*\epsilon + \epsilon,$$
+следовательно, выполнен критрий Коши.
+\end{proof}
+\begin{cor}
+Признак Лейбница следует из признака Дирихле.
+$$u_k = (-1)^k$$
+\end{cor}
+\end{enumerate}
+
+\begin{deff}
+Пусть $k(i)$ --- взаимно-однозначное отображение $\nat \to \nat$\\
+Пусть дан ряд $\ssum a_k$. Тогда $\sum_{i=1}^{\infty} a_{k(i)}$ называется его перестановкой.
+\end{deff}
+\begin{thm}
+\textbf{(Коши).}
+Если ряд сходится абсолютно, то любая его перестановка тоже сходится абсолютно, и его сумма равна сумме исходного ряда.
+\end{thm}
+\begin{proof}
+$$\sum_{i=1}^{n}|a_{k(i)}| \le \sum_{k=1}^{\max\limits_{i=1,\ldots,n} k(i)} |a_k| \le \ssum |a_k| < \infty$$
+TODO k() fix
+Следовательно есть абсолютная сходимость.\\
+Пусть $\s = \ssum a_k$,
+$$(\forall \epsilon>0) (\exists N) \sum\limits_{k=N+1}^{\infty} |a_k| < \epsilon$$
+Пусть $M = \max\limits_{k(i)\le N}(i)$. Тогда $\forall m > M$ имеем
+$$\left|\sum_{i=1}^{m} a_{k(i)} - \s \right| \le \left| \sum_{i=1}^{m} a_{k(i)} - \sum_{k=1}^{N} a_k \right| + \left|\sum_{k=1}^{N}|a_k| - \s \right| <$$
+ $$ < \sum_{k=N+1}^{\infty}|a_k| + \sum_{k=N+1}^{\infty}|a_k| < 2\epsilon$$
+ Следовательно $\lim\limits_{m\to\infty} \sum_{i=1}^m a_{k(i)} = \s$
+\end{proof}
+\begin{thm}\label{riman}
+\textbf{(Риманя).} Пусть $\ssum$ --- условно-сходящийся ряд действительных чисел. Тогда $\forall \s \in \overline{\real}$
+найдеся такая перестановка $k(i)$ членов ряда, что $\sum_{i=1}^{\infty}=\s$
+\end{thm}
+\begin{sts}
+(В обозначениях теоремы \ref{riman}) бесконечно много $a_k \ge 0$ и бесконечно много $a_k < 0$
+\end{sts}
+\begin{proof}
+пусть $u_j$ --- занумерованные $a_k \le 0$ в порядке роста $k$, а $v_j$ --- аналогично для $a_k < 0$.
+Тогда суммы обоих последовательностей расходятся к $\pm\infty$.
+Действительно, если бы оба сходилось, то сходился абсолютно исходный ряд. Если бы расходился только один из этих рядов, то расходился бы и исходный
+\end{proof}
+\begin{proof}
+\textbf{(Теоремы \ref{riman}).}\\ 
+$\s \in \real$\\
+Найдется такое $n_1$, что $\sum_{j=1}^{n_1} \ge \s$, существует наименьшее $m_1$ такое, что 
+$$\sum_{j=1}^{n_1}u_j+\sum_{i=1}^{m_1} v_i \le \s$$
+$$u_1,\cdots,u_{n_1}, v_1, \cdots, v_{m_1}$$
+Существует наименьшее $n_2>n_1: \sum_{j=1}^{n_2}u_j + \sum_{i=1}^{m_1}v_i> \s$\\
+Существует наименьшее $m_2>m_1: \sum_{j=1}^{n_2}u_j + \sum_{i=1}^{2_1}v_i< \s$\\
+Существует наименьшее $n_3>n_2: \sum_{j=1}^{n_2}u_j + \sum_{i=1}^{m_1}v_i> \s \ldots$\\
+$$\sum_{j=1}^{n_r}u_j + \sum_{i=1}^{m_2}v_i - \s < 0 \text{ и } \left|\sum_{j=1}^{n_r}u_j + \sum_{i=1}^{m_r}v_i  -\s \right| \le |v_{m_r}|$$
+$$\sum_{j=1}^{n_{r+1}}u_j + \sum_{i=1}^{m_r}v_i - \s > 0 \text{ и } \left( \sum_{j=1}^{n_{r+1}}u_j + \sum_{i=1}^{m_r}v_i  -\s \right) \le u_{n_{r+1}}$$
+Суммы переставленного ряда с номерами 
+$$\s_{n_r+m_r} \text{ и } \s_{n_{r+1}+m_r} \xrightarrow{r\to\infty} \s$$ 
+
+Если $n_r+m_r \le l \le n_{r+1} + m_{r}$, то
+$$\s_{n_r + m_r} \le \s_l \le \s{n_{r+1} + m_r}$$
+
+Если $n_{r+1}+m_r \le p \le n_{r+1} + m_{r+1}$, то
+$$\s_{n_{r+1} + m_r} \le \s \le \s_{n_{r+1} + m_{r+1}}$$
+Следовательно, последовательность частичных сумм $\rightarrow \s$\\
+$\s = + \infty$\\
+Если $n_r+m_r \le l \le n_{r+1} + m_{r}$, то
+$$\s_{n_r + m_r} \le l \le n_{r+1} + m_r$$
+$\exists n_1: \sum_{j=1}^{n_1}u_j > 1$\\
+$\exists n_2: \sum_{j=1}^{n_2}u_j + v_1 > 2 \ldots$\\
+$\s_{n_k+(k+1)} \rightarrow +\infty$
+$\s_{n_k+k} \rightarrow +\infty$, так как $v_k \to 0$\\
+Аналогично для $\s = - \infty$ 
+\end{proof}
