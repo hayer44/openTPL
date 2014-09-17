@@ -1,1 +1,48 @@
-\chapter{Ряды. Продолжение.}
+\chapter{}
+
+\begin{thm} \textbf{(Коши)}
+    Если ряды $\sum_{i=1}^{\infty} u_i$ и $\sum_{j=1}^{\infty} v_j$
+    сходятся абсолютно, то~ряд из~их произведений $u_iv_j$,
+    занумерованных в~любом порядке, абсолютно сходится,
+    и~его сумма равна произведению сумм рядов
+    $\sum_{i=1}^{\infty} u_i * \sum_{j=1}^{\infty} v_j$
+\end{thm}
+
+\begin{proof}
+    Пусть произведения $u_iv_j$ занумерованы натуральными числами
+    $k \in \nat$, т.~e. $w_k = u_{i(k)}v_{j(k)}$. Тогда 
+    $\sum_{k=1}^{K} |w_k| = \sum_{k=1}^{K} |u_{i(k)}v_{j(k)}|
+    \le \sum_{i=1}^{m} \sum_{j=1}^m |u_iv_j|$, где~
+    $m = \max\{i(k), j(k),$ $1\le k \le K\}$, отсюда~
+    $\sum_{k=1}^{K} |w_k| \le \sum_{i=1}^m |u_i| * \sum_{j=1}^m |v_j|
+    \le \sum_{i=1}^{\infty} |u_i| * \sum_{j=1}^{\infty} |v_j| < \infty$.
+    Ряд $\sum_{k=1}^{\infty} w_k$ сходится абсолютно.
+    Рассмотрим $\sum_{i=1}^{n} \sum_{j=1}^n u_iv_j =
+    \sum_{i=1}^n u_i * \sum_{j=1}^n v_j \xrightarrow{n \to\infty}
+    \sum_{i=1}^{\infty} u_i * \sum_{j=1}^{\infty} v_j$
+\end{proof}
+
+\begin{thm} \textbf{(Мертекса)}
+    Пусть ряды $\sum_{i=1}^{\infty} u_i$ и~$\sum_{j=1}^{\infty} v_j$
+    сходятся, причем один из~них абсолютно и $U$ и $V$ --- их~суммы,
+    соответственно. Тогда сходится ряд $\sum_{k=1}^{\infty} w_k$,
+    где~$w_k = \sum_{i=1}^{k} u_iv_{k+1-j}$, и~его сумма равна $UV$
+\end{thm}
+
+\begin{proof}
+    $U_nV_n - \sum_{k=1}^n w_k$ (где $U_n =
+    \sum_{i=1}^n u_i$, $V_n = \sum_{j=1}^n v_j$) $=
+    \sum_{i=1}^n\sum_{j=1}^n u_iv_j - \sum_{k=1}^n\sum_{i=1}^k
+    u_iv_{k+1-j} = \sum_{i=1}^n u_i(V_n - V_{n+1-j})$.
+    Пусть ряд $\sum_{k=1}^{\infty} u_k$ сходится абсолютно, а~ряд
+    $\sum_{j=1}^{\infty} v_j$ сходится,
+    тогда $\forall\epsilon>0\mbox{ }\exists N: \sum_{i=N+1}^{\infty} |u_i|<
+    \epsilon$ и $\forall n \ge N\mbox{ }|V_n - V| < \epsilon$. 
+    Тогда при~$n \ge 2N\mbox{ }|U_nV_n - \sum_{k=1}^n w_k| \le
+    \sum_{i=1}^N |u_i(V_n-V_{n+1-i})| + \sum_{i=N+1}^n |u_i(V_n-V_{n+1-i})|
+    \le \sum_{i=1}^{\infty} |u_i|*2\epsilon + \epsilon * 2\sup\limits_k
+    |V_k|=(2\sum_{i=1}^{\infty}|u_i| + 2\sup\limits_{k}|V_k|)\epsilon$.
+    Значит, $U_nV_n - \sum_{k=1}^n w_k = \overline{\overline{o}}(1)$ при
+    $n \to\infty$, отсюда имеем $\sum_{k=1}^n w_k \xrightarrow{n \to\infty}
+    UV$.
+\end{proof}
