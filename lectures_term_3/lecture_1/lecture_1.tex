@@ -31,7 +31,7 @@ $$ \mbox{Если ряд } \sum_{k=1}^{\infty} a_k \mbox{ сходится, то
 Если ряд $\ssum a_k$ абсолюно сходится, то он сходится.
 \end{thm}
 \begin{proof}
-По критерию Коши, $ \forall{\epsilon\!>\! 0} \quad \exists N \quad \forall m \! >\! N \quad \forall p \in \nat : \left| \s_{m+p} - \s_m \right| < \epsilon$
+По критерию Коши, $$ \forall{\epsilon\!>\! 0} \quad \exists N \quad \forall m \! >\! N \quad \forall p \in \nat : \left| \s_{m+p} - \s_m \right| < \epsilon,$$
 Так как $\left| \s_{m+p} - \s_m \right| \le \sum_{k=m+1}^{m+p}|a_k|$, то выполняется критерий Коши для исходного ряда, и он сходится.
 \end{proof}
 \begin{deff}
@@ -49,7 +49,7 @@ $$\ssumn \alpha a_k = \alpha \ssumn a_k = \alpha \s_n$$
 Если ряды $\ssum a_k$ и $\ssum b_k$ сходятся (абсолютно сходятся)
 и $\s_a$ и $\s_b$ --- их суммы, то ряд $\ssum(a_k+b_k)$ сходится (сходится абсолютно) и его сумма --- $\s_a+\s_b$
 \begin{proof}
-$$\ssumn(a_k+b_k) = \ssumn a_k + \ssum b_k \xrightarrow{n\to\infty} \s_a + \s_b$$
+$$\ssumn(a_k+b_k) = \ssumn a_k + \ssumn b_k \xrightarrow{n\to\infty} \s_a + \s_b$$
 Так как $$ \ssumn|a_k+b_k|\le \ssumn|a_k| + \ssumn|b_k| \le\ssum|a_k| + \ssum|b_k| \mbox{, то } \ssumn|a_k+b_k|$$ --- монотонная ограниченная последовательность и, следовательно, сходится.
 \end{proof}
 \item
@@ -61,7 +61,7 @@ $$ \sum_{k=1}^N \left| \sum_{j=n_{k-1}}^{n_N} a_j \right| \le \sum_{j=1}^{n_N}|a
 ограничена, тогда первая сумма --- монотонная ограниченная последовательность, которая сходится.
 \end{proof}
 \item
-Если члены ряда $a_k \xrightarrow{k \to \infty} 0$, $n_k$ --- строго возрастающая последовательность натуральных чисел и $\sup_k (n_k - n_{k-1}) <\infty)$, 
+Если члены ряда $a_k \xrightarrow{k \to \infty} 0$, $n_k$ --- строго возрастающая последовательность натуральных чисел и $\sup\limits_k (n_k - n_{k-1}) <\infty)$, 
 сгруппированный ряд $\ssum \Big(\sum\limits_{j=n_{k-1}+1}^{n_k} a_j\Big)$, где
 $ n_0 = 0 $, сходится $\s$ --- его, сумма то начальный ряд также сходится и $\s$ --- его сумма.
 \begin{proof}
